@@ -26,7 +26,7 @@ keyword:
   edge_shared_notm:
     Open Horizon shared components
   ieam:
-    IEAM
+    Open Horizon
   edge_profile:
     edge computing manager profile
   edge_deploy_pattern:
@@ -92,7 +92,7 @@ keyword:
   mgmt_hub:
     management hub
   message_hub_notm:
-    IBM Event Streams
+    Apache Kafka
   ocp:
     OCP
   ocp_tm:
