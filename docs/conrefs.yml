@@ -4,7 +4,7 @@ keyword:
   cloud_notm:
     IBM Cloud
   cloud_registry:
-    IBM Cloud Container Registry
+    DockerHub
   common_services:
     IBM Cloud Platform Common Services
   contain_soft:
@@ -20,11 +20,11 @@ keyword:
   edge:
     IBM&reg; Edge Application Manager
   edge_notm:
-    IBM Edge Application Manager
+    Open Horizon
   edge_devices_notm:
-    IBM Edge Application Manager
+    Open Horizon
   edge_shared_notm:
-    IBM Edge Application Manager shared components
+    Open Horizon shared components
   ieam:
     IEAM
   edge_profile:
@@ -34,13 +34,13 @@ keyword:
   edge_deploy_patterns:
     IBM Edge Application Manager deployment patterns
   edge_node:
-    IBM Edge Application Manager edge node
+    Open Horizon edge node
   edge_nodes:
-    IBM Edge Application Manager edge nodes
+    Open Horizon edge nodes
   edge_service:
-    IBM Edge Application Manager service
+    Open Horizon service
   edge_services:
-    IBM Edge Application Manager services
+    Open Horizon services
   homebrew:
     Homebrew&reg;
   horizon_open:
@@ -68,7 +68,7 @@ keyword:
   IBM_notm:
     IBM
   event_streams:
-    IBM Event Streams Service
+    Apache Kafka
   ibm_cloud:
     IBM Cloud
   klust:
