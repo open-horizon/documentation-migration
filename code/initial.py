@@ -14,4 +14,4 @@ with open("docs/SUMMARY.md", "r+") as opened_file:
     for line in summary:
         if any(ext in line for ext in ignore_list):
             print(line)
-            summary.remove(line)
+            summary.remove(line) #TODO figure out why this isn't exactly working
