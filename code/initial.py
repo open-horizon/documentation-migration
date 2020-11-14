@@ -8,10 +8,12 @@ def oh_folders(*args):
     copytree(src, dest, ignore=ignore_patterns(*ignore_list), dirs_exist_ok=True)
 
 
-with open("docs/SUMMARY.md", "r+") as opened_file:
-    summary = opened_file.readlines()
+oh_folders()
 
-    for line in summary:
-        if any(ext in line for ext in ignore_list):
-            print(line)
-            summary.remove(line) #TODO figure out why this isn't exactly working
+# with open("docs/SUMMARY.md", "r") as opened_file:
+#     summary = opened_file.readlines()
+
+# with open("docs/SUMMARY.md", "w") as opened_file:
+#      for line in summary:
+#         if any(ext in line for ext in ignore_list):
+#             opened_file.write()
