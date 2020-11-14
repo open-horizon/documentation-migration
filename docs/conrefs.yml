@@ -30,9 +30,9 @@ keyword:
   edge_profile:
     edge computing manager profile
   edge_deploy_pattern:
-    IBM Edge Application Manager deployment pattern
+    Open Horizon deployment pattern
   edge_deploy_patterns:
-    IBM Edge Application Manager deployment patterns
+    Open Horizon deployment patterns
   edge_node:
     Open Horizon edge node
   edge_nodes:
