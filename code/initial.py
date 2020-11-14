@@ -10,10 +10,10 @@ def oh_folders(*args):
 
 oh_folders()
 
-# with open("docs/SUMMARY.md", "r") as opened_file:
-#     summary = opened_file.readlines()
+with open("docs/SUMMARY.md", "r") as opened_file:
+    summary = opened_file.readlines()
 
-# with open("docs/SUMMARY.md", "w") as opened_file:
-#      for line in summary:
-#         if any(ext in line for ext in ignore_list):
-#             opened_file.write()
+with open("docs/SUMMARY.md", "w") as opened_file:
+    for line in summary:
+        if not any(ext in line for ext in ignore_list):
+            opened_file.write(line)
