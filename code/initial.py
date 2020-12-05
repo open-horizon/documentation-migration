@@ -1,5 +1,6 @@
 from shutil import ignore_patterns, copytree
 from datetime import datetime, date
+import os
 
 ignore_list = [".git", "quick_start", "nl", "api", "cli", "tools", "integration.md", "offline_installation.md", "conrefs.yml"]
 
@@ -19,18 +20,21 @@ def edit_summary():
             if not any(ext in line for ext in ignore_list):
                 opened_file.write(line)
 
+def update_date():
+    directory = "docs/"
+    for filename in os.listdir(directory):
+        if filename.endswith(".md"):
+            a_file = open(filename, "r")
+            content = a_file.readlines()
 
+            content[3] = f"years: {datetime.now().year}\n"
+            content[4] = f'lastupdated: "{date.today()}"\n'
+            a_file = open(filename, "w")
+            a_file.writelines(content)
 
-a_file = open("docs/hub/hub.md", "r")
-content = a_file.readlines()
-
-content[3] = f"years: {datetime.now().year}\n"
-content[4] = f'lastupdated: "{date.today()}"\n'
-a_file = open("docs/hub/hub.md", "w")
-a_file.writelines(content)
-
-a_file.close()
+            a_file.close()
 
 if __name__ == '__main__':
     oh_folders()
     edit_summary()
+    update_date()
