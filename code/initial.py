@@ -24,12 +24,12 @@ def update_date():
     directory = "docs/"
     for filename in os.listdir(directory):
         if filename.endswith(".md"):
-            a_file = open(filename, "r")
+            a_file = open(filename, "r") #open the file and read
             content = a_file.readlines()
 
             content[3] = f"years: {datetime.now().year}\n"
             content[4] = f'lastupdated: "{date.today()}"\n'
-            a_file = open(filename, "w")
+            a_file = open(filename, "w") #open the same file and overrite line3 & 4
             a_file.writelines(content)
 
             a_file.close()
