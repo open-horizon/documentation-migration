@@ -21,18 +21,23 @@ def edit_summary():
                 opened_file.write(line)
 
 def update_date():
+    """This function loops through directory and updates dates of files in said directory."""
     directory = "docs/"
-    for filename in os.listdir(directory):
-        if filename.endswith(".md"):
-            a_file = open(filename, "r") #open the file and read
-            content = a_file.readlines()
+    for root, dirs, files in os.walk(directory):
+        ignore = ["README.md","SUMMARY.md"]
+        file_list = [edit_files(root + "/" + file) for file in files if (file not in ignore and file.endswith(".md"))]
 
-            content[3] = f"years: {datetime.now().year}\n"
-            content[4] = f'lastupdated: "{date.today()}"\n'
-            a_file = open(filename, "w") #open the same file and overrite line3 & 4
-            a_file.writelines(content)
+def edit_files(i_file):
+    """This function updates date of files passed into it."""
+    a_file = open(i_file, "r")
+    content = a_file.readlines()
 
-            a_file.close()
+    content[3] = f"years: {datetime.now().year}\n"
+    content[4] = f'lastupdated: "{date.today()}"\n'
+    a_file = open(i_file, "w") #open the same file and overrite line3 & 4
+    a_file.writelines(content)
+
+    a_file.close()
 
 if __name__ == '__main__':
     oh_folders()
