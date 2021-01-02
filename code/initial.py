@@ -2,12 +2,10 @@ from shutil import ignore_patterns, copytree
 from datetime import datetime, date
 import os
 
+dest = "docs/"
 ignore_list = [".git", "quick_start", "nl", "api", "cli", "tools", "integration.md", "offline_installation.md", "conrefs.yml"]
-
-def oh_folders(*args):
+def oh_folders(src, dest=dest):
     """Copies the folder from the source directory into a docs folder eliminating commercial information."""
-    src = "/home/edeediong/Documents/Open Source/docs"
-    dest = "docs/"
     copytree(src, dest, ignore=ignore_patterns(*ignore_list), dirs_exist_ok=True)
 
 def edit_summary():
@@ -20,12 +18,11 @@ def edit_summary():
             if not any(ext in line for ext in ignore_list):
                 opened_file.write(line)
 
-def update_date():
+def update_date(dest=dest):
     """This function loops through directory and updates dates of files in said directory."""
-    directory = "docs/"
-    for root, dirs, files in os.walk(directory):
+    for root, _, files in os.walk(dest):
         ignore = ["README.md","SUMMARY.md"]
-        file_list = [edit_files(root + "/" + file) for file in files if (file not in ignore and file.endswith(".md"))]
+        _ = [edit_files(root + "/" + file) for file in files if (file not in ignore and file.endswith(".md"))]
 
 def edit_files(i_file):
     """This function updates date of files passed into it."""
@@ -40,6 +37,7 @@ def edit_files(i_file):
     a_file.close()
 
 if __name__ == '__main__':
-    oh_folders()
+    src = "/home/edeediong/Documents/open-horizon-docs/"
+    oh_folders(src=src)
     edit_summary()
     update_date()
